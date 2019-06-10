@@ -7,5 +7,6 @@ payload mapObject ((value, key) ->
       (capitalizeKey(key as String)) : value
       key=mouli
       value=kohli
+      mouli=kohli
     }
   )
