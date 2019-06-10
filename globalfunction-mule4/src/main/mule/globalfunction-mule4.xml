@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="globalfunction-mule4Flow" doc:id="4db41da0-f59a-4ff2-93d2-0d8dd8759735" >
+		<ee:transform doc:name="Transform Message" doc:id="c8b69a54-d598-449d-8f8a-fd9b4208d0c5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+import modules::myMapping
+output application/json
+---
+myMapping::main(payload: { "user" : "kohli" })]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
